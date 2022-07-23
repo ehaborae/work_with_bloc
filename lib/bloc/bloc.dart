@@ -7,8 +7,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
     on<CounterEvent>(mapEventToState);
   }
 
-  @override
-  void mapEventToState(CounterEvent event, Emitter<CounterState> emit) async {
+  void mapEventToState(CounterEvent event, Emitter<CounterState> emit) {
     if (event is IncrementEvent) {
       emit(CounterValueState(state.counter! + 1));
     }
